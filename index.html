@@ -3,11 +3,13 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <script src="js/app-manager.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/utils.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/sprite.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/fish.js" type="text/javascript" charset="utf-8"></script>
     <script src="js/game.js" type="text/javascript" charset="utf-8"></script>
     <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="./css/confirm.css">
     <title>BombFish</title>
   </head>
 
@@ -33,5 +35,21 @@
     <section id="messages" class="bottom">
       <div id="score" class="text big"></div>
     </section>
+
+    <form role="dialog" data-type="confirm" class="hide">
+      <section>
+        <h1 data-l10n-id="confirmation">Confirmation</h1>
+        <p>
+          <img src="icon.png" alt="BombFish Icon" height="55" width="55">
+          <strong>BombFish</strong>
+          <small>KeeWeApps</small>
+        </p>
+        <p data-l10n-id="want-to-install">Do you want to download and install this application?</p>
+      </section>
+      <menu>
+        <button data-l10n-id="cancel">Cancel</button>
+        <button data-l10n-id="yes" class="recommend">Yes</button>
+      </menu>
+    </form>
   </body>
 </html>

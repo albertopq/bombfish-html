@@ -1,0 +1,59 @@
+var AppManager = {
+  installable: false,
+  alreadyInstalled: false,
+  confirmView: null,
+  cancelButton: null,
+  confirmButton: null,
+  init: function am_init() {
+    var self = this;
+    this.confirmView = document.querySelector('[data-type="confirm"]');
+    var buttons = this.confirmView.getElementsByTagName('button');
+    this.cancelButton = buttons[0];
+    this.confirmButton = buttons[1];
+
+    this.cancelButton.addEventListener('click', function onCancel(event) {
+      console.log("HIDING " + self.confirmView);
+      utils.hide(self.confirmView);
+      event.preventDefault();
+      return false;
+    });
+    this.confirmButton.addEventListener('click', function onConfirm(event) {
+      self.install();
+      event.preventDefault();
+      return false;
+    });
+
+    if (navigator.mozApps) {
+      this.installable = true;
+      var request = navigator.mozApps.getSelf();
+      var self = this;
+      request.onsuccess = function onGetApp() {
+        if(this.result) {
+          self.alreadyInstalled = true;
+        } else {
+          utils.show(self.confirmView);
+        }
+      }
+    }
+  },
+
+  install: function am_install() {
+    utils.hide(this.confirmView);
+    if (this.alreadyInstalled)
+      return false;
+    var manifestPath = location.protocol + '//' + location.host + location.pathname;
+    request = navigator.mozApps.install(manifestPath + 'manifest.webapp');
+    var self = this;
+    request.onsuccess = function onInstall() {
+      self.alreadyInstalled = true;
+    };
+    request.onerror = function onError() {
+      console.error('Install failed: ' + this.error.name);
+    };
+  }
+};
+
+window.addEventListener('DOMContentLoaded', function onLoaded() {
+  window.removeEventListener('DOMContentLoaded', onLoaded);
+  AppManager.init();
+})
