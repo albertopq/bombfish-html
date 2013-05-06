@@ -1,6 +1,7 @@
 CACHE MANIFEST
-
+#
 index.html
-js/*
-img/*
-css/*
+js/
+img/
+css/
+css/images/ui

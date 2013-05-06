@@ -1,4 +1,5 @@
 var AppManager = {
+  MANIFEST_PATH: 'http://bombfish.keeweapps.com/manifest.webapp',
   installable: false,
   alreadyInstalled: false,
   confirmView: null,
@@ -12,7 +13,6 @@ var AppManager = {
     this.confirmButton = buttons[1];
 
     this.cancelButton.addEventListener('click', function onCancel(event) {
-      console.log("HIDING " + self.confirmView);
       utils.hide(self.confirmView);
       event.preventDefault();
       return false;
@@ -41,8 +41,7 @@ var AppManager = {
     utils.hide(this.confirmView);
     if (this.alreadyInstalled)
       return false;
-    var manifestPath = location.protocol + '//' + location.host + location.pathname;
-    request = navigator.mozApps.install(manifestPath + 'manifest.webapp');
+    request = navigator.mozApps.install(this.MANIFEST_PATH);
     var self = this;
     request.onsuccess = function onInstall() {
       self.alreadyInstalled = true;
