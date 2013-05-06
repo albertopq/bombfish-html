@@ -131,7 +131,7 @@ button:hover {
   animation-timing-function: linear;
   animation-name: background-stepped;
   animation-iteration-count: infinite;
-  bottom: -1.25rem;
+  bottom: 0;
 }
 
 #bg1 {
