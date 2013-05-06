@@ -1,0 +1,14 @@
+{
+  "name": "BombFish",
+  "description": "BombFish",
+  "launch_path": "/index.html",
+  "appcache_path": "/offline.appcache",
+  "developer": {
+    "name": "Alberto Pastor",
+    "url": "https://github.com/albertopq"
+  },
+  "icons": {
+    "60": "/icon.png"
+  },
+  "orientation": "portrait-primary"
+}

@@ -1,0 +1,37 @@
+<html manifest="/offline.appcache">
+
+  <head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no;" />
+    <script src="js/utils.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/sprite.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/fish.js" type="text/javascript" charset="utf-8"></script>
+    <script src="js/game.js" type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" href="./css/style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+    <title>BombFish</title>
+  </head>
+
+  <body>
+
+    <section id="home" class="view">
+      <button id="play_button" data-l10n-id="play">Play</button>
+      <div id="highscore"></div>
+    </section>
+
+    <section id="game" class="hide view">
+      <canvas id='peces'></canvas>
+      <div id="backgrounds">
+        <div id='bg2' class='bg_mov'></div>
+        <div id='bg1' class='bg_mov'></div>
+      </div>
+    </section>
+
+    <section id="post_game" class="hide view">
+      <button id="play_again" data-l10n-id="play-again">Play again</button>
+    </section>
+
+    <section id="messages" class="bottom">
+      <div id="score" class="text big"></div>
+    </section>
+  </body>
+</html>

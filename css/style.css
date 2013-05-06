@@ -1,0 +1,163 @@
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 62.5%;
+  overflow: hidden;
+  position: relative;
+  font-family: Helv Neue, Droid Sans, Arial;
+}
+
+
+/* HOME */
+
+#home {
+  background-image: url('../img/fondo_home.png');
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  text-align: center;
+}
+
+#play_button {
+  margin-top: 80%;
+}
+
+#play_again {
+  margin-top: 5rem;
+}
+
+
+/* GAME */
+
+#game {
+  background-image: -webkit-gradient(
+      linear,
+      left top,
+      left bottom,
+      from(#A2DAF4),
+      to(#225AF5)
+  );
+  background-image: linear-gradient(to bottom, #A2DAF4, #225AF5);
+}
+
+#peces {
+  display:block;
+  margin:auto;
+  margin-top: 4rem;
+}
+
+/* COMMON */
+
+.view {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: block;
+  overflow: hidden;
+  top:0;
+  left: 0;
+  text-align: center;
+}
+
+button,
+.button {
+  display: block;
+  cursor: pointer;
+  border: none;
+  background-color: #ff6000;
+  border: 0.4rem solid #fff;
+  border-radius: 1.5rem;
+  width: 20rem;
+  height: 4rem;
+  font-size: 2rem;
+  font-family: Helv Neue, Droid Sans, Arial;
+  color: #fff;
+  margin: auto;
+  font-weight: bolder;
+}
+
+
+button:active,
+button:hover {
+  background-color: #ff8400;
+}
+
+.hide {
+  display: none !important;
+}
+
+.text {
+  font-family: Helv Neue, Droid Sans, Arial;
+  color: #00FFFF;
+}
+
+.big.text {
+  font-weight: bold;
+  font-size: 15rem;
+}
+
+.bottom {
+  position: absolute;
+  bottom: 15%;
+  width: 100%;
+  text-align: center;
+}
+
+/* ANIMATIONS */
+
+.game-over {
+  -webkit-transform: translateX(-120%);
+  transform: translateX(-120%);
+  -webkit-transition: -webkit-transform 0.75s ease;
+  transition: transform 0.75s ease;
+}
+
+/* PARALAX BG */
+
+#backgrounds{
+  width:32rem;
+  position:absolute;
+  bottom: 0;
+}
+
+.bg_mov {
+  width: 455px;
+  height: 100%;
+  position: absolute;
+  -webkit-animation-timing-function: linear;
+  -webkit-animation-name: 'background-stepped';
+  -webkit-animation-iteration-count: infinite;
+  animation-timing-function: linear;
+  animation-name: background-stepped;
+  animation-iteration-count: infinite;
+  bottom: -1.25rem;
+}
+
+#bg1 {
+  background: url("../img/fondo_01.png") repeat-x;
+  -webkit-transform: translate3d(0,0,0);
+  -webkit-animation-duration: 18s;
+  transform: translate3d(0,0,0);
+  animation-duration: 18s;
+  height: 3.4rem;
+  width: 91rem;
+}
+
+#bg2 {
+  background: url("../img/fondo_02.png") repeat-x;
+  width: 91rem;
+  height: 6.11rem;
+  -webkit-animation-duration: 24s;
+  animation-duration: 24s;
+}
+
+@-webkit-keyframes 'background-stepped' {
+  0% {-webkit-transform: translate(0, 0); }
+  100% {-webkit-transform: translate(-45.5rem, 0); }
+}
+
+@keyframes background-stepped {
+  0% {transform: translate(0, 0); }
+  100% {transform: translate(-45.5rem, 0); }
+}
