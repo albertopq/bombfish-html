@@ -52,8 +52,8 @@ var Game = {
     var isTouch = window.ontouchstart;
     var touchstart = isTouch ? 'touchstart' : 'mousedown';
     this.canvas.addEventListener(touchstart, function(event) {
+      event.preventDefault();
       self.checkClick(event.clientX, event.clientY);
-      event.stopPropagation();
     });
   },
 
