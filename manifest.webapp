@@ -8,7 +8,8 @@
     "url": "https://github.com/albertopq"
   },
   "icons": {
-    "60": "/icon.png"
+    "60": "/icon.png",
+    "128": "/icon.jpg"
   },
   "orientation": "portrait-primary"
 }
