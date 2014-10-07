@@ -1,5 +1,5 @@
 var AppManager = {
-  MANIFEST_PATH: 'http://bombfish.keeweapps.com/manifest.webapp',
+  MANIFEST_PATH: window.location.href + 'manifest.webapp',
   installable: false,
   alreadyInstalled: false,
   confirmView: null,
